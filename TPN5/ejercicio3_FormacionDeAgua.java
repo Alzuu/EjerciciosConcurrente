@@ -1,5 +1,4 @@
-package practicos.TPN5;
-
+package TPN5;
 public class ejercicio3_FormacionDeAgua {
     public static void main(String[] args) {
         

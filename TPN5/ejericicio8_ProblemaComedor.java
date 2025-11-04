@@ -1,4 +1,4 @@
-package practicos.TPN5;
+package TPN5;
 
 import java.util.concurrent.Semaphore;
 
@@ -40,9 +40,9 @@ public class ejericicio8_ProblemaComedor {
 
                 } else if (turno == 'P' && totalGatos.availablePermits() > 0) {
                     // Si hay que cambiar el turno a los gatos y hay gatos esperando.
-                } else if(turno == 'N' && totalPerros.availablePermits()>0) {
-                   // Si no hay nadie y hay perros esperando.
-                } else if(turno == 'N' && totalGatos.availablePermits()>0){
+                } else if (turno == 'N' && totalPerros.availablePermits() > 0) {
+                    // Si no hay nadie y hay perros esperando.
+                } else if (turno == 'N' && totalGatos.availablePermits() > 0) {
                     // Si no hay nadie y hay gatos esperando.
                 }
                 /*
@@ -57,14 +57,26 @@ public class ejericicio8_ProblemaComedor {
     }
 
     public static class Gestor implements Runnable {
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
 
+        }
     }
 
     public static class Perro implements Runnable {
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
 
+        }
     }
 
     public static class Gato implements Runnable {
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
 
+        }
     }
 }

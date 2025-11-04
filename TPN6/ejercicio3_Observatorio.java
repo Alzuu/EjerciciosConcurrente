@@ -1,4 +1,4 @@
-package practicos.TPN6;
+package TPN6;
 
 public class ejercicio3_Observatorio {
     public static void main(String[] args) {

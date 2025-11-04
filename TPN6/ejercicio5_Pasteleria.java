@@ -1,4 +1,4 @@
-package practicos.TPN6;
+package TPN6;
 
 import java.util.LinkedList;
 
@@ -190,11 +190,7 @@ public class ejercicio5_Pasteleria {
     }
 
     public static class BrazoMecanico implements Runnable {
-        @Override
-        public void run() {
-            // TODO Auto-generated method stub
-            
-        }
+
     }
 
 }

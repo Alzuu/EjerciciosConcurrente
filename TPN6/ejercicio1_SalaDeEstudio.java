@@ -1,4 +1,4 @@
-package practicos.TPN6;
+package TPN6;
 
 import java.util.Random;
 //import java.util.concurrent.ThreadLocalRandom;

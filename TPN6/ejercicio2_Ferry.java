@@ -1,4 +1,4 @@
-package practicos.TPN6;
+package TPN6;
 
 public class ejercicio2_Ferry {
     public static void main(String[] args) {

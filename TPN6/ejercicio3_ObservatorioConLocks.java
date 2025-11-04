@@ -1,5 +1,4 @@
-package practicos.TPN6;
-
+package TPN6;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

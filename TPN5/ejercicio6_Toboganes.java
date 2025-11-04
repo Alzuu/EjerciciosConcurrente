@@ -1,5 +1,4 @@
-package practicos.TPN5;
-
+package TPN5;
 import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
 
@@ -41,9 +40,9 @@ public class ejercicio6_Toboganes {
             while (true) {
                 hayVisitante.acquire();
 
-                int tobogan = darTobogan();
+                //int tobogan = darTobogan();
                 mutex.acquire();
-                toboganVisitante = tobogan;
+                //toboganVisitante = tobogan;
                 mutex.release();
                 permisoBajar.release();
 

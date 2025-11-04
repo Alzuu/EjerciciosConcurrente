@@ -1,5 +1,4 @@
-package practicos.TPN5;
-
+package TPN5;
 import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
 
