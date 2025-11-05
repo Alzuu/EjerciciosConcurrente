@@ -45,16 +45,16 @@ public class Farmacia {
         lockGen.lock();
         try {
             while (canastoFichasGeneral.isEmpty() && canastoFichasContables.isEmpty()) {
-                hayParaEncargado.await();
+                hayParaContable.await();
             }
-            if (!canastoFichasGeneral.isEmpty()) {
-                // Produce la Ficha Encargado
-                System.out.println("Contable " + id + ": PRODUCE ficha ENCARGADO.");
-                producirFichaEncargado(ficha);
-            } else {
+            if (!canastoFichasContables.isEmpty()) {
                 // Tira la Ficha Contable
                 System.out.println("Contable " + id + ": TIRA ficha CONTABLE.");
                 canastoFichasContables.removeFirst();
+            } else {
+                // Produce la Ficha Encargado
+                System.out.println("Contable " + id + ": PRODUCE ficha ENCARGADO.");
+                producirFichaEncargado(ficha);
             }
         } finally {
             lockGen.unlock();
@@ -63,20 +63,20 @@ public class Farmacia {
 
     public void consumirEncargado(int id, String ficha) throws InterruptedException {
         lockGen.lock();
-        try{
+        try {
             while (canastoFichasGeneral.isEmpty() && canastoFichasEncargado.isEmpty()) {
                 hayParaEncargado.await();
             }
-            if(!canastoFichasGeneral.isEmpty()){
-                // Produce una ficha contable.
-                System.out.println("Encargado " + id + ": PRODUCE ficha CONTABLE.");
-                producirFichaContable(ficha);
-            } else {
+            if (!canastoFichasEncargado.isEmpty()) {
                 // Tira la ficha encargado.
                 System.out.println("Encargado " + id + ": TIRA ficha ENCARGADO.");
                 canastoFichasEncargado.removeFirst();
+            } else {
+                // Produce una ficha contable.
+                System.out.println("Encargado " + id + ": PRODUCE ficha CONTABLE.");
+                producirFichaContable(ficha);
             }
-        }finally{
+        } finally {
             lockGen.unlock();
         }
     }

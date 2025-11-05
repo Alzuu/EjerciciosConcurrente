@@ -1,5 +1,7 @@
 package EjerciciosAdicionales.Farmacia;
 
+import java.util.Random;
+
 public class Encargado implements Runnable{
     private final int id;
     private int idFichaEnc;
@@ -18,7 +20,9 @@ public class Encargado implements Runnable{
                 String ficha = idFichaEnc + " Ficha Cont";
                 idFichaEnc++;
                 farmacia.consumirEncargado(id, ficha);
-                Thread.sleep(2000);
+                Random random = new Random();
+                int tAleat = (random.nextInt(3) + 1) * 1000;
+                Thread.sleep(tAleat);
             }
         } catch (Exception e) {
             Thread.currentThread().interrupt();
