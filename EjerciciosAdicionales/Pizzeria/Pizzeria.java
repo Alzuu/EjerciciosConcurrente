@@ -37,9 +37,7 @@ public class Pizzeria {
     public void cocinarVegana() throws InterruptedException {
         // Espera hasta tener un pedido de las pizzas Veganas.
         pedidoVegana.acquire();
-        // Cuando toma el pedido "saca el pedido del mostrador".
-        semListaPedidos.release();
-        // Luego comienza a cocinar.
+        // Comienza a cocinar.
     }
 
     public void avisarAlRepartidor() {
@@ -48,5 +46,7 @@ public class Pizzeria {
 
     public void repartir() throws InterruptedException {
         aRepartir.acquire();
+        // Cuando toma el pedido "saca el pedido del mostrador".
+        semListaPedidos.release();
     }
 }
