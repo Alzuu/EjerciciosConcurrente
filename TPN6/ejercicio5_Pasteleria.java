@@ -63,7 +63,6 @@ public class ejercicio5_Pasteleria {
             }
             listaCajas.add(cajaActual);
             cajaActual = null;
-            notifyAll();
         }
 
         public synchronized void reponerCaja() throws InterruptedException {
