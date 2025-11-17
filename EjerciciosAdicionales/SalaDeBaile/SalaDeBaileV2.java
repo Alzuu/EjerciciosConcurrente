@@ -24,7 +24,8 @@ public class SalaDeBaileV2 {
         private Semaphore enFila1 = new Semaphore(0, true);
         private Semaphore enFila2 = new Semaphore(0, true);
         private Semaphore hayLugarSala = new Semaphore(capSalaBaile);
-        private Semaphore entrarABailar = new Semaphore(0, true);
+        private Semaphore entrarABailar1 = new Semaphore(0, true);
+        private Semaphore entrarABailar2 = new Semaphore(0, true);
 
         public void hacerFila(int id, int fila) throws InterruptedException {
             // Si son pareja entra uno en cada fila, si no es en la que tiene menos.
@@ -47,7 +48,7 @@ public class SalaDeBaileV2 {
             mutex.release();
             enFila1.release();
             System.out.println("PERSONA " + id + ": EN FILA 1.");
-            entrarABailar.acquire();
+            entrarABailar1.acquire();
             mutex.acquire();
             cantFila1--;
             mutex.release();
@@ -59,7 +60,7 @@ public class SalaDeBaileV2 {
             mutex.release();
             enFila2.release();
             System.out.println("PERSONA " + id + ": EN FILA 2.");
-            entrarABailar.acquire();
+            entrarABailar2.acquire();
             mutex.acquire();
             cantFila2--;
             mutex.release();
@@ -72,7 +73,8 @@ public class SalaDeBaileV2 {
             enFila1.acquire();
             enFila2.acquire();
             // Los hace pasar.
-            entrarABailar.release(2);
+            entrarABailar1.release();
+            entrarABailar2.release();
         }
 
         public void salirPistaBaile() throws InterruptedException {
